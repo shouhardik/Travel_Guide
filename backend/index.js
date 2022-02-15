@@ -7,8 +7,8 @@ const pinRoute=require("./routes/pin")
 dotenv.config()
 
 app.use(express.json())
-
-mongoose.connect('mongodb://localhost:27017/pin').then(()=>{
+const db='mongodb+srv://Shouhardik:SHOUHARDIK@cluster0.nrzqk.mongodb.net/pin?retryWrites=true&w=majority'
+mongoose.connect(db,{useNewUrlParser:true}).then(()=>{
     console.log("Mongodb Connected");
 })
 .catch((err)=>console.log(err));
